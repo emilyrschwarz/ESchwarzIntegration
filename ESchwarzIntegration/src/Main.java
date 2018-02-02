@@ -8,20 +8,36 @@ public class Main {
 
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
-		System.out.println("Hello from Emily's Integration Project!");
+		System.out.println("Welcome to Emily's Integration Project!");
+		System.out.println("This is a text-based adventure game.");
+		// this is an intro to the game
+
+		System.out.println("To begin, what is your name, adventurer?");
+		String playerName = input.nextLine();
+		// playerName allows the user to input their name
 		
-		System.out.println("What is your name?");
-		String inputName = input.nextLine();
+		System.out.println("Your name is " + playerName + "? How nice!");
+		System.out.println("Next, how old are you, " + playerName + "?");
+		int playerAge = input.nextInt();
+		//playerAge allows the user to input their name
 		
-		// this variable allows the user to input their name
-		// a variable 
+		System.out.println("You're " + playerAge + "? Nice! People of all ages "
+		    + "can play, so you're in luck!");
 		
-		System.out.println("Your name is " + inputName + "? How nice!");
+		//start game below
+		System.out.println("Greetings " + playerName + "I am Robin, your mentor"
+		    + " for your journey.");
+		System.out.println("Please type 'Y', so I know you're ready!");
+		String Y = input.next();
 		
-		System.out.println("How old are you, " + inputName + "?");
-		int inputAge = input.nextInt();
+		//choose a companion
+		System.out.println("Okay, so to begin your adventure, you will need a "
+		    + "companion.");
+		System.out.println("Pick an element of nature to get your new friend! "
+		    + "Please type 'water', 'air', 'fire', or 'earth'.");
 		
-		System.out.println("You're " + inputAge + "? Cool!");
+		
+	
 		
 
 	}
