@@ -5,6 +5,8 @@ import java.util.Scanner;
 // I love adventure style games, so I've decided to use what I've
 // learned in class to make something fun!
 
+
+
 public class Main {
 
 	public static void main(String[] args) {
@@ -23,23 +25,23 @@ public class Main {
 		System.out.println("Your name is " + playerName + "? How nice!");
 		System.out.println("Next, how old are you, " + playerName + "?");
 		int playerAge = input.nextInt();
-		// playerAge allows the user to input their name
-		// Java has a few different data types. They are the following:
-		// Byte: used to save memory in a small amount
-		// Short: same as a byte
-		// Int: to use integer data types as an unsigned integer
-		// Long: stores values larger than int
-		// Float: used when you have to store something with a precise value 
-		// (decimal)
-		// Double: for decimals (never precise)
-		// Boolean: only for true/false values
-		// Char: represents a single 16-bit Unicode character
+		/* playerAge allows the user to input their name
+		   Java has a few different data types. They are the following:
+		   Byte: used to save memory in a small amount
+		   Short: same as a byte
+		   Int: to use integer data types as an unsigned integer
+		   Long: stores values larger than int
+		   Float: used when you have to store something with a precise value 
+		   (decimal)
+		   Double: for decimals (never precise)
+		   Boolean: only for true/false values
+		   Char: represents a single 16-bit Unicode character */
 		
 		System.out.println("You're " + (int) playerAge + "? Nice! People of all ages "
 		    + "can play, so you're in luck!");
 		
 		// start game below
-		System.out.println("Greetings " + playerName + "I am Robin, your mentor"
+		System.out.println("Greetings " + playerName + ", I am Robin, your mentor"
 		    + " for your journey.");
 		System.out.println("Please type 'Y', so I know you're ready!");
 		String Y = input.next();
@@ -47,14 +49,28 @@ public class Main {
 		//choose a companion
 		System.out.println("Okay, so to begin your adventure, you will need a "
 		    + "companion.");
-		System.out.println("Pick an element of nature to get your new friend! "
-		    + "Please type 'water', 'air', 'fire', or 'earth'.");
-		String playerElementChoice = input.nextLine();
-		// playerElementChoice allows the player to type in element of their
-		// choosing. This allows them to pick a companion based off an element
+		System.out.println("Type in either 1, 2, 3, or 4 to get your companion! "
+		    + "Let fate decide your new best friend!");
+		int playerCompanionChoice = input.nextInt();
+		//playerCompanionChoice allows the user to type in a number to get a 
+		//companion
 		
-		
-		
+		if(playerCompanionChoice == 1) {
+		  System.out.println("Congrats! You have chosen the Water companion, "
+		      + "Cascadia!");
+		} else if (playerCompanionChoice == 2) {
+		  System.out.println("Congrats! You have chosen the Fire companion,"
+		      + " Ignatus!");
+		} else if (playerCompanionChoice == 3) {
+		  System.out.println("Congrats! You have chosen the Earth companion, "
+		      + "Gaia!");
+		} else if (playerCompanionChoice == 4) {
+		  System.out.println("Congrats! You have chose the Air companion, Azure!");
+		} else {
+		  System.out.println("Oops! Restart and please choose an whole number "
+		      + "between 1 and 4 to get your companion!");
+		  
+		}
 
 		
 
