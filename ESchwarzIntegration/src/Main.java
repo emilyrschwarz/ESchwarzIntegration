@@ -55,6 +55,7 @@ public class Main {
 		//playerCompanionChoice allows the user to type in a number to get a 
 		//companion
 		
+		//prints the possible companion choices
 		if(playerCompanionChoice == 1) {
 		  System.out.println("Congrats! You have chosen the Water companion, "
 		      + "Cascadia!");
@@ -71,8 +72,14 @@ public class Main {
 		      + "between 1 and 4 to get your companion!");
 		  
 		}
-
 		
+		System.out.println("Now you have your companion! Next we will discuss "
+		    + "the details of the journey you are about to go on!");
+	  System.out.println("Please type 'A' to continue!");
+    String A = input.next();
+		
+    
+   
 
 	}
 }
