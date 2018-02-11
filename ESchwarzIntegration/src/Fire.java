@@ -1,8 +1,13 @@
 
 public class Fire {
-  private String fireTypeName;
-  private int healthPointsFire;
-  private String fireAttackMain;
-  private String fireAttackSecondary;
-
+    private String fireTypeStats = "Ignatus' HP is 100, and his main attack is"
+        + " Fire Blast.";
+   
+    public String getFireTypeStats() {
+      return fireTypeStats;
+    }
+    public void setFireTypeStats(String fireTypeStats) {
+      this.fireTypeStats = fireTypeStats;
+  }
 }
+

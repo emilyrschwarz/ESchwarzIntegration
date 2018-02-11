@@ -74,11 +74,114 @@ public class Main {
 		}
 		
 		System.out.println("Now you have your companion! Next we will discuss "
-		    + "the details of the journey you are about to go on!");
-	  System.out.println("Please type 'A' to continue!");
-    String A = input.next();
+		    + "some information about them!");
+	  System.out.println("Please type in the number you chose previously "
+	      + "to learn about your companion!");
+	  int companionNumInput = input.nextInt();
+	  
+	  // allows user to input number to get info about companion
+	
+	  //returns info about companions
+	  switch(companionNumInput) {
+	    case 1:
+	      Water water = new Water();
+	      System.out.println(water.getWaterTypeStats());
+	      break;
+	    case 2:
+	      Fire fire = new Fire();
+	      System.out.println(fire.getFireTypeStats());
+	      break;
+	    case 3:
+	      Earth earth = new Earth();
+	      System.out.println(earth.getEarthTypeStats());
+	      break;
+	    case 4:
+	      Air air = new Air();
+	      System.out.println(air.getAirTypeStats());
+	      break;
+	    default:
+	      System.out.println("Invalid Response!");
+	  }
 		
+	  System.out.println("Now, let's do some math and string manipulation since "
+	      + "Emily isn't far enough into the game to actually incorporate real "
+	      + "battling with the companions yet!");
+	  
+	  //subtraction demonstration
+	  System.out.println("Ignatus got injured in battle! Cascadia used Waterfall "
+	      + "on him. Enter any number between 1 and 100 to determine how much "
+	      + "damage she did!");
+	  double hpSubtraction = input.nextDouble();
+	  double hpValueOne = 100 - hpSubtraction;
+	  
+	  //addition demonstration
+	  System.out.println("It seems that Ignatus now has an HP of " + hpValueOne +
+	      " ! You decide to use a potion to heal him. Enter any number between "
+	      + "1 and 50 to heal him!");
+	  double hpAddition = input.nextDouble();
+	  double hpValueTwo = hpValueOne + hpAddition;
+	  
+	  //multiplication demo
+	  System.out.println("Nice! You've healed Ignatus to " + hpValueTwo + " !"
+	      + " It's his turn to attack. "
+	      + "How much damage will he do if he uses Fire Blast?");
+	  System.out.println("Enter a number between 1 and 50 to determine how much"
+	      + " damage the attack will do.");
+	  double fireBlastAttack = input.nextDouble();
+	  
+	  System.out.println("Enter any positive number to determine how many times "
+	      + "the attack will hit.");
+	  double hits = input.nextDouble();
+	  
+	  double fireBlastTotalDamage = fireBlastAttack * hits;
+	  System.out.println("It looks like his attack will do this much damage: " 
+	  + (int) fireBlastTotalDamage);
+	  
+	  //division demo
+	  System.out.println("What if Ignatus causes Cascadia's HP to decrease to 50?"
+	      + " He used Fire Blast. In this case, that attack does 20 HP worth of "
+	      + "damage.");
+	  System.out.println("How many times did his attack hit? Let's divide 50 by "
+	      + "20 to find out!");
+	  
+	  double hpDivision = 50/20;
+	  System.out.println("It looks like his attack hit " + hpDivision + 
+	      " times.");
+	  
+	  //remainder demo
+	  System.out.println("What if we want to find the remainder of that number?");
+	  int hpRemainder = 50%20;
+	  System.out.println("It seems like the remainder is " + hpRemainder + " !");
+	  
+	  System.out.println("Please type 'A', so I know you're ready!");
+    String A = input.next();
+    //continues program so it's not just a wall of text
+	  
+    //string manipulation 
+	  System.out.println("Here's some string manipulation that has nothing to do"
+	      + " with this project, but I want a good grade so here we go.");
+	  String words = "Hello World!";
+	  char aChar = words.charAt(11);
+	  System.out.println(aChar);
+	  //prints character
+	  
+	  String hello = words.substring(0, 5);
+	  System.out.println(hello);
+	  //prints substring
+	  
+	  String upper = words.toUpperCase();
+	  System.out.println(upper);
+	  //prints in upper case
+	  
+	  String lower = words.toLowerCase();
+	  System.out.println(lower);
+	  //prints in lower case
+	  
+	  
+	  
+	  
     
+	  
    
 
 	}
