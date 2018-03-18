@@ -1,3 +1,5 @@
+//Emily Schwarz
+//This holds basic information about the earth type companion
 
 public class Earth {
     private String earthTypeStats ="Gaia's HP is 100, and her main attack is"

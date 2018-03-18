@@ -1,3 +1,5 @@
+//Emily Schwarz
+//This holds basic information about the water type companion
 
 public class Water {
   private String waterTypeStats = "Cascadia's HP is 100, and her main attack is"
