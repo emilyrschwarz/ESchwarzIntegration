@@ -169,23 +169,40 @@ public class Main {
         + "through different values of attack points.");
     System.out.println("This is how we can find the smallest number in array.");
 
-    double[] array = new double[5];
-    System.out.println("Enter" + " " + array.length + " numbers");
-    for (int c = 0; c < array.length; c++) {
-      array[c] = input.nextDouble();
+    // array stuff, this allows the user to create the array
+    double[] minArray = new double[5];
+    System.out.println("Enter" + " " + minArray.length + " numbers");
+    for (int c = 0; c < minArray.length; c++) {
+      minArray[c] = input.nextDouble();
     }
-    min(array);
+    min(minArray);
   }
 
-  private static double min(double[] array) {
-    double min = array[0];
-    for (int i = 1; i < array.length; i++) {
-      if (array[i] < min) {
-        min = array[i];
+  // finds the minimum value of the array
+  private static double min(double[] minArray) {
+    double min = minArray[0];
+    for (int i = 1; i < minArray.length; i++) {
+      if (minArray[i] < min) {
+        min = minArray[i];
       }
     }
     return min;
   }
+
+  // finds the sum of an array
+ public static void sum(String[] args) {
+   int [] sumArray = new int [5];
+   for (int i = 0; i < sumArray.length; i++) {
+     sumArray[i] = i;
+   }
+   int sum = 0;
+   for (int j : sumArray) {
+     sum += j;
+   }
+   System.out.println(sum);
+ }
+ 
+ 
 
   public static void stringDemo() {
     Scanner input = new Scanner(System.in);
@@ -213,6 +230,15 @@ public class Main {
     StringBuilder sb = new StringBuilder(words2);
     sb.reverse();
     System.out.println(sb);
-
+    
+    }
+  
+  public static void index(String[] args) {
+    char[] indexArray = { 'a', 'd', 'v', 'e', 'n', 't', 'u', 'r', 'e'};
+    
+    int indexStart = -1;
+    
+    for (int i = 0; (i < indexArray.length))
   }
+  
 }
