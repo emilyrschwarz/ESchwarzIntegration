@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 // Emily Schwarz
 // My Integration Project that integrates all the
@@ -99,10 +101,10 @@ public class Main {
         System.out.println("Invalid Response!");
     }
 
-    System.out.println("Now that you have a companion, we can look at some "
-        + "other cool stuff!");
-    System.out.println("You have two options. You can choose to do come cool "
-        + "stuff with math or words. Please type 1 for math or 2 for words to "
+    System.out.println("Now that you have a companion, we can learn how to "
+        + "do some cool stuff with code!");
+    System.out.println("You have two options. You can choose to manipulate "
+        + "code with math or words. Please type 1 for math or 2 for words to "
         + "get started!");
     int demoInput = input.nextInt();
 
@@ -170,12 +172,32 @@ public class Main {
     System.out.println("This is how we can find the smallest number in array.");
 
     // array stuff, this allows the user to create the array
-    double[] minArray = new double[5];
-    System.out.println("Enter" + " " + minArray.length + " numbers");
-    for (int c = 0; c < minArray.length; c++) {
-      minArray[c] = input.nextDouble();
+    double[] mainArray = new double[5];
+    
+    // enter 5 numbers to fill out the array
+    System.out.println("Enter" + " " + mainArray.length + " numbers."
+        + " The numbers will represent attack points.");
+    for (int c = 0; c < mainArray.length; c++) {
+      mainArray[c] = input.nextDouble();
     }
-    min(minArray);
+    System.out.println("The lowest value you typed was: " + min(mainArray));
+    
+    System.out.println("The sum of these attack points is: " + sum(mainArray));
+    
+    //System.out.println("Element at attack point index: " + find(mainArray));
+    
+    System.out.println("Now, we'll use a while loop to count the number of "
+        + "times an attack will hit. Type in the number 1 to start the loop!");
+    //input count for while loop
+    int attackCounter = input.nextInt();
+    
+    // while demo 
+      while (attackCounter < 6) {
+        System.out.println("Attack hit " + attackCounter + "times!");
+        attackCounter++;    
+      }
+    
+     
   }
 
   // finds the minimum value of the array
@@ -190,55 +212,105 @@ public class Main {
   }
 
   // finds the sum of an array
- public static void sum(String[] args) {
-   int [] sumArray = new int [5];
-   for (int i = 0; i < sumArray.length; i++) {
-     sumArray[i] = i;
-   }
+ public static double sum(double[] theSum) {
    int sum = 0;
-   for (int j : sumArray) {
-     sum += j;
+   int i;
+   
+   for (i = 0; i < theSum.length; i++) {
+     sum += theSum[i];
    }
-   System.out.println(sum);
+    return sum;
  }
  
+  // finding the index of an array, which isn't working ugh
+ public static double find(double[] hufflepuff, double value) {
+   double h = 0;
+   for ( int i = 0; i < hufflepuff.length; i++) {
+     if (hufflepuff[i]== value) {
+       h = i;
+       break;
+     }
+   }
+   return h;
+   
+ }
  
-
   public static void stringDemo() {
     Scanner input = new Scanner(System.in);
     // string manipulation
-    System.out.println("Here's some string manipulation that has nothing to do"
-        + " with this project, but I want a good grade so here we go.");
-    String words = "Hello World!";
-    char aChar = words.charAt(11);
-    System.out.println(aChar);
+    System.out.println("This is the string demo! This consists of a few "
+        + "demonstrations about what you can do with words in code!");
+    
+    System.out.println("First, I'll show you what can be done with the "
+        + "characters in the word 'adventure'.");
+    
+    String words = "Adventure";
+    char aChar = words.charAt(0);
+    System.out.println("This is the first character: " + aChar);
     // prints character
 
-    String hello = words.substring(0, 5);
-    System.out.println(hello);
+    String vent = words.substring(2, 6);
+    System.out.println("This is a substring: " + vent);
     // prints substring
 
     String upper = words.toUpperCase();
-    System.out.println(upper);
+    System.out.println("This is the word in uppercase: " + upper);
     // prints in upper case
 
     String lower = words.toLowerCase();
-    System.out.println(lower);
+    System.out.println("This is the word in lowercase: " + lower);
     // prints in lower case
-
-    String words2 = "racecar";
+    
+    System.out.println("Next, the string builder class will be used to show"
+        + " other cool things you can do. Press 'A' to continue!");
+    String a = input.next();
+    
+    System.out.println("Let's see what we can do with Cascadia's name!");
+    
+    //reverse
+    String words2 = "Cascadia";
     StringBuilder sb = new StringBuilder(words2);
     sb.reverse();
-    System.out.println(sb);
+    System.out.println("This is her name in reverse: " + sb);
+    
+    //delete
+    StringBuilder sb2 = new StringBuilder(words2);
+    sb2.delete(3, 7);
+    System.out.println("This is her name with characters deleted: " + sb2);
+    
+    //insert 
+    StringBuilder sb3 = new StringBuilder(words2);
+    sb3.insert(8, "s");
+    System.out.println("This is her name with a character added: " + sb3);
     
     }
   
-  public static void index(String[] args) {
-    char[] indexArray = { 'a', 'd', 'v', 'e', 'n', 't', 'u', 'r', 'e'};
+    //two-dimensional array
+   /* int[][] board = new int[3][3]; {
+    for (int i = 0; i < board.length; i++) {
+      for (int j = 0; j < board[i].length; j++) {
+        board[i][j] = i+ j;
+      }
+    }
+    } */
     
-    int indexStart = -1;
+    /*ArrayList<String> list = new ArrayList<String>();
+    list.add("Item1");
+    int pos = list.indexOf("Item1");
+    int size = list.size();
+    boolean element = list.contains("Item5");
+    String item = list.get(0);
+    list.remove(0);
+    list.remove("Item3");
     
-    for (int i = 0; (i < indexArray.length))
-  }
-  
+    for (int i = 0; i < list.size(); i++) {
+      System.out.println("Index: " + i + " - Item: " + list.get(i));
+    }
+    
+    for (String str : list) {
+      System.out.println("Item is: " + str);
+    }
+} */
 }
+
+  
