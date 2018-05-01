@@ -1,16 +1,26 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Scanner;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 // Emily Schwarz
 // My Integration Project that integrates all the
 // skills I've learned in my Introduction to Programming class.
 // I love adventure style games, so I've decided to use what I've
 // learned in class to make something fun!
 
+/**
+ * @author ersch
+ *
+ */
 public class Main {
 
   public static void main(String[] args) {
     Scanner input = new Scanner(System.in);
+    Date date = new Date();
+    String strDateFormat = "HH:mm:ss a";
+    SimpleDateFormat sdf = new SimpleDateFormat(strDateFormat);
+    System.out.println(sdf.format(date));
     System.out.println("Hello, welcome to my Integration Project!");
     System.out.println("This is a text-based adventure game.");
     // This is an introduction to the game
@@ -42,11 +52,14 @@ public class Main {
     System.out.println("Greetings " + playerName + ", I am Robin, your mentor"
         + " for your journey.");
     System.out.println("Please type 'Y', so I know you're ready!");
-    String Y = input.next();
+    String y = input.next();
+    
+    if (y == "Y") {
+      // choose a companion
+      System.out.println(
+          "Okay, so to begin your adventure, you will need a " + "companion.");
+    }
 
-    // choose a companion
-    System.out.println(
-        "Okay, so to begin your adventure, you will need a " + "companion.");
     System.out.println("Type in either 1, 2, 3, or 4 to get your companion! "
         + "Let fate decide your new best friend!");
     int playerCompanionChoice = input.nextInt();
@@ -173,7 +186,7 @@ public class Main {
 
     // array stuff, this allows the user to create the array
     double[] mainArray = new double[5];
-    
+
     // enter 5 numbers to fill out the array
     System.out.println("Enter" + " " + mainArray.length + " numbers."
         + " The numbers will represent attack points.");
@@ -181,23 +194,22 @@ public class Main {
       mainArray[c] = input.nextDouble();
     }
     System.out.println("The lowest value you typed was: " + min(mainArray));
-    
+
     System.out.println("The sum of these attack points is: " + sum(mainArray));
-    
-    //System.out.println("Element at attack point index: " + find(mainArray));
-    
+
+    // System.out.println("Element at attack point index: " + find(mainArray));
+
     System.out.println("Now, we'll use a while loop to count the number of "
         + "times an attack will hit. Type in the number 1 to start the loop!");
-    //input count for while loop
+    // input count for while loop
     int attackCounter = input.nextInt();
-    
-    // while demo 
-      while (attackCounter < 6) {
-        System.out.println("Attack hit " + attackCounter + "times!");
-        attackCounter++;    
-      }
-    
-     
+
+    // while demo
+    while (attackCounter < 6) {
+      System.out.println("Attack hit " + attackCounter + "times!");
+      attackCounter++;
+    }
+
   }
 
   // finds the minimum value of the array
@@ -212,41 +224,41 @@ public class Main {
   }
 
   // finds the sum of an array
- public static double sum(double[] theSum) {
-   int sum = 0;
-   int i;
-   
-   for (i = 0; i < theSum.length; i++) {
-     sum += theSum[i];
-   }
+  public static double sum(double[] theSum) {
+    int sum = 0;
+    int i;
+
+    for (i = 0; i < theSum.length; i++) {
+      sum += theSum[i];
+    }
     return sum;
- }
- 
+  }
+
   // finding the index of an array, which isn't working ugh
- public static double find(double[] hufflepuff, double value) {
-   double h = 0;
-   for ( int i = 0; i < hufflepuff.length; i++) {
-     if (hufflepuff[i]== value) {
-       h = i;
-       break;
-     }
-   }
-   return h;
-   
- }
- 
+  public static double find(double[] hufflepuff, double value) {
+    double h = 0;
+    for (int i = 0; i < hufflepuff.length; i++) {
+      if (hufflepuff[i] == value) {
+        h = i;
+        break;
+      }
+    }
+    return h;
+
+  }
+
   public static void stringDemo() {
     Scanner input = new Scanner(System.in);
     // string manipulation
     System.out.println("This is the string demo! This consists of a few "
         + "demonstrations about what you can do with words in code!");
-    
+
     System.out.println("First, I'll show you what can be done with the "
         + "characters in the word 'adventure'.");
-    
+
     String words = "Adventure";
-    char aChar = words.charAt(0);
-    System.out.println("This is the first character: " + aChar);
+    char character = words.charAt(0);
+    System.out.println("This is the first character: " + character);
     // prints character
 
     String vent = words.substring(2, 6);
@@ -260,57 +272,78 @@ public class Main {
     String lower = words.toLowerCase();
     System.out.println("This is the word in lowercase: " + lower);
     // prints in lower case
-    
+
     System.out.println("Next, the string builder class will be used to show"
         + " other cool things you can do. Press 'A' to continue!");
     String a = input.next();
-    
-    System.out.println("Let's see what we can do with Cascadia's name!");
-    
-    //reverse
+
+    if (a == "A") {
+      System.out.println("Let's see what we can do with Cascadia's name!");
+    }
+
+    // reverse
     String words2 = "Cascadia";
     StringBuilder sb = new StringBuilder(words2);
     sb.reverse();
     System.out.println("This is her name in reverse: " + sb);
-    
-    //delete
+
+    // delete
     StringBuilder sb2 = new StringBuilder(words2);
     sb2.delete(3, 7);
     System.out.println("This is her name with characters deleted: " + sb2);
-    
-    //insert 
+
+    // insert
     StringBuilder sb3 = new StringBuilder(words2);
     sb3.insert(8, "s");
     System.out.println("This is her name with a character added: " + sb3);
-    
-    }
+
+  }
   
-    //two-dimensional array
-   /* int[][] board = new int[3][3]; {
-    for (int i = 0; i < board.length; i++) {
-      for (int j = 0; j < board[i].length; j++) {
-        board[i][j] = i+ j;
-      }
-    }
-    } */
-    
-    /*ArrayList<String> list = new ArrayList<String>();
-    list.add("Item1");
-    int pos = list.indexOf("Item1");
-    int size = list.size();
-    boolean element = list.contains("Item5");
-    String item = list.get(0);
-    list.remove(0);
-    list.remove("Item3");
-    
-    for (int i = 0; i < list.size(); i++) {
-      System.out.println("Index: " + i + " - Item: " + list.get(i));
-    }
-    
-    for (String str : list) {
-      System.out.println("Item is: " + str);
-    }
-} */
-}
+  //override a class, hierarchy, polymorphism
 
   
+  public class Companions {
+    public void showType() {
+      System.out.println("This is the type");
+    }
+    public void executeAttack() {
+      System.out.println("This is the attack");
+    }
+  }
+  
+  public class Cascadia extends Companions {
+    public void showType() {
+      System.out.println("Water");
+    }
+    public void executeAttack() {
+      System.out.println("Cascadia used Waterfall!");
+    }
+  }
+  
+  public class Ignatus extends Companions {
+    public void showType() {
+      System.out.println("Fire");
+    }
+    public void executeAttack() {
+      System.out.println("Ignatus used Fire Blast!");
+    }
+  }
+  
+  public class Gaia extends Companions {
+    public void showType() {
+      System.out.println("Earth");
+    }
+    public void executeAttack() {
+      System.out.println("Gaia used Earthquake!");
+    }
+  }
+  
+  public class Azure extends Companions {
+    public void showType() {
+      System.out.println("Air");
+    }
+    public void executeAttack() {
+      System.out.println("Azure used Tornado!");
+    }
+  }
+}
