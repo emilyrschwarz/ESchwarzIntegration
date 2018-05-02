@@ -1,7 +1,4 @@
-import java.util.ArrayList;
 import java.util.Scanner;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 // Emily Schwarz
 // My Integration Project that integrates all the
@@ -15,12 +12,11 @@ import java.util.Date;
  */
 public class Main {
 
+  /**
+   * @param args
+   */
   public static void main(String[] args) {
     Scanner input = new Scanner(System.in);
-    Date date = new Date();
-    String strDateFormat = "HH:mm:ss a";
-    SimpleDateFormat sdf = new SimpleDateFormat(strDateFormat);
-    System.out.println(sdf.format(date));
     System.out.println("Hello, welcome to my Integration Project!");
     System.out.println("This is a text-based adventure game.");
     // This is an introduction to the game
@@ -53,7 +49,7 @@ public class Main {
         + " for your journey.");
     System.out.println("Please type 'Y', so I know you're ready!");
     String y = input.next();
-    
+
     if (y == "Y") {
       // choose a companion
       System.out.println(
@@ -130,6 +126,9 @@ public class Main {
   }
 
   // math demo
+  /**
+   * 
+   */
   public static void mathDemo() {
     Scanner input = new Scanner(System.in);
     System.out.println("Welcome to a math demo!");
@@ -224,6 +223,10 @@ public class Main {
   }
 
   // finds the sum of an array
+  /**
+   * @param theSum
+   * @return
+   */
   public static double sum(double[] theSum) {
     int sum = 0;
     int i;
@@ -235,6 +238,11 @@ public class Main {
   }
 
   // finding the index of an array, which isn't working ugh
+  /**
+   * @param hufflepuff
+   * @param value
+   * @return
+   */
   public static double find(double[] hufflepuff, double value) {
     double h = 0;
     for (int i = 0; i < hufflepuff.length; i++) {
@@ -247,6 +255,9 @@ public class Main {
 
   }
 
+  /**
+   * 
+   */
   public static void stringDemo() {
     Scanner input = new Scanner(System.in);
     // string manipulation
@@ -298,52 +309,29 @@ public class Main {
     System.out.println("This is her name with a character added: " + sb3);
 
   }
-  
-  //override a class, hierarchy, polymorphism
 
-  
-  public class Companions {
-    public void showType() {
-      System.out.println("This is the type");
-    }
-    public void executeAttack() {
-      System.out.println("This is the attack");
-    }
-  }
-  
-  public class Cascadia extends Companions {
-    public void showType() {
-      System.out.println("Water");
-    }
-    public void executeAttack() {
-      System.out.println("Cascadia used Waterfall!");
-    }
-  }
-  
-  public class Ignatus extends Companions {
-    public void showType() {
-      System.out.println("Fire");
-    }
-    public void executeAttack() {
-      System.out.println("Ignatus used Fire Blast!");
-    }
-  }
-  
-  public class Gaia extends Companions {
-    public void showType() {
-      System.out.println("Earth");
-    }
-    public void executeAttack() {
-      System.out.println("Gaia used Earthquake!");
-    }
-  }
-  
-  public class Azure extends Companions {
-    public void showType() {
-      System.out.println("Air");
-    }
-    public void executeAttack() {
-      System.out.println("Azure used Tornado!");
-    }
-  }
+  // override a class, hierarchy
+
+  /*
+   * public class Companions { public void showType() {
+   * System.out.println("This is the type"); }
+   * 
+   * public void executeAttack() { System.out.println("This is the attack"); } }
+   * 
+   * public class Cascadia extends Companions { public void showType() {
+   * System.out.println("Water"); } public void executeAttack() {
+   * System.out.println("Cascadia used Waterfall!"); } }
+   * 
+   * public class Ignatus extends Companions { public void showType() {
+   * System.out.println("Fire"); } public void executeAttack()[] {
+   * System.out.println("Ignatus used Fire Blast!"); } }
+   * 
+   * public class Gaia extends Companions { public void showType() {
+   * System.out.println("Earth"); } public void executeAttack() {
+   * System.out.println("Gaia used Earthquake!"); } }
+   * 
+   * public class Azure extends Companions { public void showType() {
+   * System.out.println("Air"); } public void executeAttack() {
+   * System.out.println("Azure used Tornado!"); } }
+   */
 }
